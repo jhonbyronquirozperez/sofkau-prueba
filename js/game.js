@@ -12,8 +12,7 @@ let questionCounter = 0;
 let availableQuesions = []
 
 
-//  las 25 preguntas y respuestas con su respectivo nivel
-
+// json con las 25 preguntas y respuestas con su respectivo nivel
 let questions = [
     {
         question: "¿Qué es OOPS?",
@@ -244,7 +243,7 @@ let questions = [
 
 //CONSTANTS valor por pregunta y numero de preguntas
 const CORRECT_BONUS = 1;
-const MAX_QUESTIONS = 2; // cambiar a 5 de cada nivel y volver a preguntar
+const MAX_QUESTIONS = 3; // cambiar a 5 de cada nivel y volver a preguntar
 
 //funcion para iniciar el juego y que se actualicen las preguntas
 
