@@ -242,9 +242,9 @@ let questions = [
     },
 ]
 
-//CONSTANTS
-const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 25; // cambiar a 5 de cada nivel y volver a preguntar
+//CONSTANTS valor por pregunta y numero de preguntas
+const CORRECT_BONUS = 1;
+const MAX_QUESTIONS = 2; // cambiar a 5 de cada nivel y volver a preguntar
 
 //funcion para iniciar el juego y que se actualicen las preguntas
 
@@ -257,8 +257,11 @@ startGame = () => {
 
 getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        //go to the end page
-        return window.location.assign('/end.html');
+
+        //cuando reciba una clave y un valor, añadirá estos al almacén, o actualizará el valor si la clave ya existe.
+        localStorage.setItem("mostRecentScore", score);
+        //retornar a la pagina final end.html
+        return window.location.assign("end.html");
     }
     questionCounter++;
     // progressText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
