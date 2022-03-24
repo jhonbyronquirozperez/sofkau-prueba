@@ -271,6 +271,7 @@ getNewQuestion = () => {
     availableQuesions.splice(questionIndex, 1);
     acceptingAnswers = true;
 };
+//respuestas correctas e incorrectas y temporizador para cambiar de pregunta
 
 choices.forEach((choice) => {
     choice.addEventListener('click', (e) => {
@@ -279,6 +280,17 @@ choices.forEach((choice) => {
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
+       
+        const classToApply =
+      selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+
+    selectedChoice.parentElement.classList.add(classToApply);
+
+    setTimeout(() => {
+      selectedChoice.parentElement.classList.remove(classToApply);
+      getNewQuestion();
+    }, 1000);
+
         getNewQuestion();
     });
 });
